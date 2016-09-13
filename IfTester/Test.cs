@@ -4,14 +4,13 @@ using System.Diagnostics;
 
 namespace IfTester {
 	internal class Test {
-		int runs = 100000000;
 		Stopwatch sw;
 
-		public void Run( ) {
+		public void Run(string s, int runs ) {
 			sw = new Stopwatch( );
 			sw.Start( );
 			for ( int i = 0; i < runs; i++ ) {
-				FallThrough( i );
+				FallThrough( s );
 			}
 			sw.Stop( );
 			Console.WriteLine( "Fallthrough: " + sw.Elapsed );
@@ -20,26 +19,26 @@ namespace IfTester {
 
 			for ( int i = 0; i < runs; i++ ) {
 
-				NoFallThrough( i );
+				NoFallThrough( s );
 			}
 			sw.Stop( );
 			Console.WriteLine( "NoFallthrough: " + sw.Elapsed );
 		}
 
-		private void FallThrough( int i ) {
-			if ( i == 0 ) {
+		private void FallThrough( string s ) {
+			if ( s == "Nathan" ) {
 				//skip
 			}
-			else if ( !( i == 0 ) ) {
+			else if ( !( s == "Nathan" ) ) {
 				//skip
 			}
 		}
 
-		private void NoFallThrough( int i ) {
-			if ( !( i == 0 )) {
+		private void NoFallThrough( string s ) {
+			if ( !( s == "Nathan" )) {
 				//skip
 			}
-			else if ( i == 0 ) {
+			else if ( s == "Nathan" ) {
 				//skip
 			}
 		}
