@@ -26,19 +26,19 @@ namespace IfTester {
 		}
 
 		private void FallThrough( string s ) {
-			if ( s == "Nathan" ) {
+			if (!( s == "Nathan") ) {
 				//skip
 			}
-			else if ( !( s == "Nathan" ) ) {
+			else if ( ( s == "Nathan" ) ) {
 				//skip
 			}
 		}
 
 		private void NoFallThrough( string s ) {
-			if ( !( s == "Nathan" )) {
+			if ( ( s == "Nathan" ) ) {
 				//skip
 			}
-			else if ( s == "Nathan" ) {
+			else if ( !( s == "Nathan" ) ) {
 				//skip
 			}
 		}

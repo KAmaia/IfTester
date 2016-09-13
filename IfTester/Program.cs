@@ -11,7 +11,7 @@ namespace IfTester {
 		static void Main( string[ ] args ) {
 			string name = args[0];
 			int runs = 1000;
-			Console.WriteLine( "If Tester, Test String = " + name +  " Runs: " + runs);
+			Console.Write( "If Tester.\nTest String = " + name +  "\nRuns: " + runs + "\n");
 			for ( int i = 0; i < 10; i++ ) {
 				Console.WriteLine( "Test " + i );
 				Test t = new Test();
